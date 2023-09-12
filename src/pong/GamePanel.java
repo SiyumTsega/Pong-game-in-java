@@ -47,7 +47,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public void paint(Graphics g) {
 		image = createImage(getWidth(), getHeight());
 		graphics = image.getGraphics();
-		draw(graphics);
+//		draw(graphics);
 		g.drawImage(image, 0, 0, this);
 	}
 	
@@ -102,6 +102,7 @@ public class GamePanel extends JPanel implements Runnable{
 			ball.setXDirection(ball.xVelocity);
 			ball.setYDirection(ball.yVelocity);		
 		}
+		
 		///paddle collision detection
 		if(paddle1.y <= 0) {
 			paddle1.y = 0;
@@ -123,6 +124,7 @@ public class GamePanel extends JPanel implements Runnable{
 			newPaddles();
 			newBall();
 		}
+		
 		if(ball.x >= GAME_WIDTH - BALL_DIAMETER) {
 			score.player1++;
 			newPaddles();
